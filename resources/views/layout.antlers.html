@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title ?? site:name }}</title>
+</head>
+<body>
+
+{{ partial:partials/nav }}
+
+<div {{ if config:statamic:antlers:version == 'runtime' }}style="color:red !important;"{{ /if }}>
+    {{ partial:partials/nav }}
+</div>
+
+{{ partial:partials/cached_nav }}
+
+{{ partial:partials/cached_nav }}
+
+<div>
+    <h2>Issue</h2>
+    <p>When using the <strong>"runtime"</strong> engine, a re-used nav in a partial has the incorrect depth.</p>
+    <p>If the internal of the partial is wrapped in a cache tag, the issue is not present.</p>
+    <p>If the engine is switched to <strong>"regex"</strong>, the issue is not present.</p>
+    <p>Change the runtime engine in the config to see the difference. The expected output is below.</p>
+</div>
+
+<div>
+    <h2>Expected Output</h2>
+    <ul>
+        <li>
+            <span>Home - 1</span>
+            <ul>
+                <li>
+                    <span>Another Page - 2</span>
+                    <ul>
+                        <li>
+                            <span>A third page - 3</span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <ul>
+        <li>
+            <span>Home - 1</span>
+            <ul>
+                <li>
+                    <span>Another Page - 2</span>
+                    <ul>
+                        <li>
+                            <span>A third page - 3</span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <ul>
+        <li>
+            <span>Home - 1</span>
+            <ul>
+                <li>
+                    <span>Another Page - 2</span>
+                    <ul>
+                        <li>
+                            <span>A third page - 3</span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <ul>
+        <li>
+            <span>Home - 1</span>
+            <ul>
+                <li>
+                    <span>Another Page - 2</span>
+                    <ul>
+                        <li>
+                            <span>A third page - 3</span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+</div>
+
+</body>
+</html>

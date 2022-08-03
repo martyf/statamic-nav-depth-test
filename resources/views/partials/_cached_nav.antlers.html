@@ -1,0 +1,13 @@
+{{ cache for="1 hour" }}
+<ul>
+    {{ nav:menu }}
+    <li>
+        <span>{{ title }} - {{ depth }}</span>
+
+        {{ if children }}
+        <ul>{{ *recursive children* }}</ul>
+        {{ /if }}
+    </li>
+    {{ /nav:menu }}
+</ul>
+{{ /cache }}

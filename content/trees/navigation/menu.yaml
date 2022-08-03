@@ -1,0 +1,12 @@
+tree:
+  -
+    id: 8e1c8617-1fdd-40b2-9cdb-9977e0d28810
+    entry: home
+    children:
+      -
+        id: e884a35c-bbe0-408f-a2ea-b735074e1e14
+        entry: a17860d1-b176-44f3-8ba3-5f2a29fe7d92
+        children:
+          -
+            id: 10a09f57-c911-4b2e-9983-74ad2c1b8d96
+            entry: 124f467b-3106-453b-84e9-f9770c72fcb5
